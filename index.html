@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#111111">
+  <title>AI 攝影師 v0.1</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div>
+        <div class="eyebrow">AI PHOTOGRAPHER</div>
+        <h1>AI 攝影師</h1>
+      </div>
+      <button id="switchCamera" class="icon-btn" aria-label="切換鏡頭">↻</button>
+    </header>
+
+    <section class="camera-shell">
+      <video id="video" autoplay playsinline muted></video>
+      <canvas id="overlay"></canvas>
+
+      <div id="status" class="status">
+        <span class="dot"></span>
+        <span id="statusText">尚未開啟相機</span>
+      </div>
+
+      <div id="guide" class="guide hidden">
+        <div id="arrow" class="arrow">←</div>
+        <div id="guideText">人物往右一點</div>
+      </div>
+
+      <div id="ready" class="ready hidden">✓ 可以拍</div>
+
+      <div class="bottom-controls">
+        <button id="start" class="primary">開始拍攝</button>
+        <button id="capture" class="shutter" disabled aria-label="拍照"></button>
+      </div>
+    </section>
+
+    <section class="tips">
+      <p><strong>v0.1</strong> 先測試「人物位置＋即時指示」。</p>
+      <p>之後我們會加入姿勢輪廓、手機角度、構圖、逆光與人物補光。</p>
+    </section>
+  </main>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
