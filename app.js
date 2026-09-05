@@ -170,6 +170,7 @@ async function loop() {
       }
     } catch (err) {
       console.error(err);
+      statusText.textContent = `相機無法開啟：${err.name || '錯誤'}${err.message ? '｜' + err.message : ''}`;
     }
   }
 
@@ -213,6 +214,7 @@ switchButton.addEventListener("click", async () => {
       await startCamera();
     } catch (err) {
       console.error(err);
+      statusText.textContent = `相機無法開啟：${err.name || '錯誤'}${err.message ? '｜' + err.message : ''}`;
       setStatus("切換鏡頭失敗");
     }
   }
