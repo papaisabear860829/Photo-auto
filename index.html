@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>AI 攝影師 v1.0</title>
+<link rel="stylesheet" href="style.css?v=0.9">
+</head>
+<body>
+<main class="app">
+<video id="video" autoplay playsinline muted></video>
+<canvas id="overlay"></canvas>
+<div class="topbar"><div id="status" class="status">相機尚未開啟</div><div id="aiStatus" class="ai-status">AI：尚未載入</div></div>
+<div id="guide" class="guide">按「開始」開啟相機</div>
+<div id="scene" class="scene">正在理解畫面…</div>
+<div id="debug" class="debug"></div>
+<div class="controls">
+<button id="switchBtn" class="small">↻</button>
+<button id="startBtn" class="start">開始</button>
+<button id="shotBtn" class="shot" disabled>●</button>
+</div>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.22.0/dist/tf.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/pose-detection@2.1.3/dist/pose-detection.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd@2.2.3/dist/coco-ssd.min.js"></script>
+<script src="app.js?v=0.9"></script>
+</body>
+</html>
